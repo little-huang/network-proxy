@@ -1,0 +1,82 @@
+/* 改变主题色变量 */
+$--color-primary: #55B7B4;
+
+/* 改变 icon 字体路径变量，必需 */
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+$--border-radius-base: $border-radius-base; //边框圆角
+$--border-color-base: $border-color-base;
+
+$--button-small-border-radius: $--border-radius-base !default;
+
+$--input-hover-border: $input-border-hover-color !default;
+$--input-focus-border: $color-primary !default;
+
+$--select-border-color-hover: $input-border-hover-color !default;
+
+@import "~element-ui/packages/theme-chalk/src/pagination.scss";
+@import "~element-ui/packages/theme-chalk/src/table.scss";
+@import "~element-ui/packages/theme-chalk/src/table-column.scss";
+@import "~element-ui/packages/theme-chalk/src/form.scss";
+@import "~element-ui/packages/theme-chalk/src/input.scss";
+@import "~element-ui/packages/theme-chalk/src/date-picker.scss";
+@import "~element-ui/packages/theme-chalk/src/select.scss";
+
+@import "~element-ui/packages/theme-chalk/src/popover.scss";
+@import "~element-ui/packages/theme-chalk/src/button.scss";
+@import "~element-ui/packages/theme-chalk/src/button-group.scss";
+@import "~element-ui/packages/theme-chalk/src/cascader.scss";
+@import "~element-ui/packages/theme-chalk/src/dropdown-menu.scss";
+@import "~element-ui/packages/theme-chalk/src/dropdown-item.scss";
+@import "~element-ui/packages/theme-chalk/src/dropdown.scss";
+@import "~element-ui/packages/theme-chalk/src/checkbox.scss";
+@import "~element-ui/packages/theme-chalk/src/form-item.scss";
+@import "~element-ui/packages/theme-chalk/src/radio.scss";
+@import "~element-ui/packages/theme-chalk/src/radio-group.scss";
+@import "~element-ui/packages/theme-chalk/src/radio-button.scss";
+@import "~element-ui/packages/theme-chalk/src/time-picker.scss";
+@import "~element-ui/packages/theme-chalk/src/loading.scss";
+@import "~element-ui/packages/theme-chalk/src/checkbox-group.scss";
+@import "~element-ui/packages/theme-chalk/src/checkbox-button.scss";
+@import "~element-ui/packages/theme-chalk/src/switch.scss";
+@import "~element-ui/packages/theme-chalk/src/tooltip.scss";
+@import "~element-ui/packages/theme-chalk/src/step.scss";
+@import "~element-ui/packages/theme-chalk/src/steps.scss";
+
+.el-input__inner{
+  padding-left: 10px;
+}
+
+.el-table--small th, .el-table--small td {
+  padding: 6px 0;
+}
+
+.base-notification{
+  z-index: 9999 !important;
+  padding: 14px !important;
+
+  .el-notification__group{
+    flex: 1;
+  }
+
+  .el-notification__title{
+    padding-right: 24px;
+  }
+
+  .el-notification__content{
+    max-height: 360px;
+    overflow-y: auto;
+  }
+
+  h3{
+    font-size: 16px;
+    margin: 0;
+    padding: 10px 0 5px 0;
+  }
+}
+
+.el-form-item.is-success .el-input__inner, 
+.el-form-item.is-success .el-input__inner:focus, 
+.el-form-item.is-success .el-textarea__inner, 
+.el-form-item.is-success .el-textarea__inner:focus {
+  border-color: $color-primary;
+}
