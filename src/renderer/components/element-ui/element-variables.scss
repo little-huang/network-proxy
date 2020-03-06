@@ -1,17 +1,23 @@
 /* 改变主题色变量 */
 $--color-primary: #55B7B4;
+$color-primary: #55B7B4 !default;
+$color-danger: #ed3f14 !default;
+$color-regular: #eef8f8 !default;
+
+//$color-primary-hover: rgba($color-primary,.1) !default;
+$color-primary-hover: mix(#fff, $color-primary, 89.88%) !default;
 
 /* 改变 icon 字体路径变量，必需 */
 $--font-path: '~element-ui/lib/theme-chalk/fonts';
-$--border-radius-base: $border-radius-base; //边框圆角
-$--border-color-base: $border-color-base;
+$--border-radius-base: 2px; //边框圆角
+$--border-color-base: #e0e1e2;
 
 $--button-small-border-radius: $--border-radius-base !default;
 
-$--input-hover-border: $input-border-hover-color !default;
+$--input-hover-border: mix(#fff, $color-primary, 45%) !default;
 $--input-focus-border: $color-primary !default;
 
-$--select-border-color-hover: $input-border-hover-color !default;
+$--select-border-color-hover:mix(#fff, $color-primary, 45%) !default;
 
 @import "~element-ui/packages/theme-chalk/src/pagination.scss";
 @import "~element-ui/packages/theme-chalk/src/table.scss";

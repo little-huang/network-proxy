@@ -1,11 +1,11 @@
 import ElementUI from './element-ui';
 
 const components = [
-  ElementUI
-]
+  ElementUI,
+];
 
 export default {
-  install(Vue){
-    components.forEach(component => Vue.use(component))
-  }
-}
+  install(Vue) {
+    components.forEach(component => Vue.use(component));
+  },
+};
