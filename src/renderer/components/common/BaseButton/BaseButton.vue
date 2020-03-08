@@ -1,3 +1,37 @@
+
+<template>
+  <div class="base-button">
+
+    <!-- start type only text -->
+    <span class="text-button" v-if="onlyText" @click="$emit('event', $event)">
+      <i :class="`iconfont ${icon}`" v-if="icon"></i>
+      <slot> </slot>
+    </span>
+    <!-- end type only text -->
+
+    <!-- start base-button -->
+    <button 
+      v-else
+      :class="{
+        'base-button': true,
+        'plain-button': type === 'plain',
+        'ghost-button': type === 'ghost',
+        'danger-button': type === 'danger',
+        'base-button-disabled': disabled && type === 'primary',
+        'danger-button-disabled': disabled && type === 'danger',
+        'plain-button-disabled': disabled && type === 'plain',
+      }" 
+      :type="nativeType"
+      @click="$emit('event', $event)"
+      >
+        <i :class="`iconfont ${icon}`" v-if="icon"></i>
+        <slot> </slot>
+      </button>
+    <!-- end base-button -->
+
+  </div>
+</template>
+
 <script>
 export default {
   name: "base-button",
@@ -22,48 +56,19 @@ export default {
   data() {
     return {}
   },
-  methods: {
-    buildTextButton() {
-      const icon = this.icon;
-      return (
-        <span class="text-button" onClick={(e) => this.$emit('event', e)}>
-          {icon && <i class={'iconfont ' + icon}></i>}
-          {this.$slots.default}
-        </span>
-      )
-    },
-    buildBaseButton() {
-      const icon = this.icon;
-      const type = this.type;
-      const nativeType = this.nativeType;
-      const disabled = this.disabled ? 'disabled' : '';
-      return (
-        <button class={{
-          'base-button': true,
-          'plain-button': type === 'plain',
-          'ghost-button': type === 'ghost',
-          'danger-button': type === 'danger',
-          'base-button-disabled': disabled && type === 'primary',
-          'danger-button-disabled': disabled && type === 'danger',
-          'plain-button-disabled': disabled && type === 'plain',
-        }} type={nativeType} onClick={(e) => this.$emit('event', e)}>
-          {icon && <i class={'iconfont ' + icon}></i>}
-          {this.$slots.default}
-        </button>
-
-      )
-    },
+  computed: {
+    onlyText() {
+      return this.type === 'only-text';
+    }
   },
-  render(r) {
-
-    if (this.type === 'only-text') return this.buildTextButton();
-
-    return this.buildBaseButton();
-  }
+  methods: {
+    
+  },
 }
 </script>
 
 <style lang="scss">
+  $text-color-primary: #333 !default;
   $color-primary: #00ac97 !default;
   $color-primary-light-1: mix(#fff, $color-primary, 10%) !default;
   $color-primary-light-9: mix(#fff, $color-primary, 90%) !default;
