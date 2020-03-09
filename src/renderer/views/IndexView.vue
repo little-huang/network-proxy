@@ -1,6 +1,6 @@
 <template>
   <div class="index-view">
-    
+    <base-button @event="add">添加</base-button>
   </div>
 </template>
 
@@ -12,6 +12,11 @@ export default {
 
     };
   },
+  methods: {
+    add() {
+      // TODO: do something ...
+    }
+  }
 };
 </script>
 

@@ -82,6 +82,7 @@ export default {
   $color-danger-light-9-disabled: rgba(#f56c6c, .2) !default;
   // 主要按钮
   .base-button {
+    cursor: pointer;
     padding: 5px 15px;
     background: $color-primary;
     color: #fff;
