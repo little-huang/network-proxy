@@ -92,6 +92,10 @@ export default {
     outline: none;
     line-height: 24px;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     .iconfont {
       line-height: 12px;
       font-size: 12px;
