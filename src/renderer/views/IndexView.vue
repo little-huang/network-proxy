@@ -1,6 +1,10 @@
 <template>
   <div class="index-view">
-    
+    <!-- start header -->
+    <div class="index-header">
+      <base-button @event="add">添加</base-button>
+    </div>
+    <!-- end header -->
   </div>
 </template>
 
@@ -12,9 +16,22 @@ export default {
 
     };
   },
+  methods: {
+    add() {
+      // TODO: do something ...
+    }
+  }
 };
 </script>
 
-<style>
+<style lang="scss">
+  .index-header {
+    display: flex;
+    justify-content: flex-end;
 
+    .base-button {
+      width: 70px;
+    }
+
+  }
 </style>

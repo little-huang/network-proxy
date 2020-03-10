@@ -82,6 +82,7 @@ export default {
   $color-danger-light-9-disabled: rgba(#f56c6c, .2) !default;
   // 主要按钮
   .base-button {
+    cursor: pointer;
     padding: 5px 15px;
     background: $color-primary;
     color: #fff;
@@ -90,6 +91,10 @@ export default {
     border-radius: 2px;
     outline: none;
     line-height: 24px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     .iconfont {
       line-height: 12px;
